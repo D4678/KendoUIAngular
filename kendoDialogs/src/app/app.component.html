@@ -1,0 +1,130 @@
+<!-- <button kendoButton *ngIf="!opened" (click)="open()">Open dialog</button>
+    <kendo-dialog
+      title="Please confirm"
+      *ngIf="opened"
+      (close)="close('cancel')"
+      [minWidth]="250"
+      [width]="450"
+    >
+      <p style="margin: 30px; text-align: center;">
+        Are you sure you want to continue?
+      </p>
+      <kendo-dialog-actions>
+        <button kendoButton (click)="close('no')">No</button>
+        <button kendoButton (click)="close('yes')" themeColor="primary">
+          Yes
+        </button>
+      </kendo-dialog-actions>
+    </kendo-dialog> -->
+
+
+    <!-- 2 -->
+    <!--Load the font icons package:-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/@progress/kendo-font-icons/dist/index.css"
+    />
+
+    <button kendoButton *ngIf="!opened" (click)="open()">Open dialog</button>
+    <kendo-dialog *ngIf="opened" (close)="onDialogClose()">
+      <kendo-dialog-titlebar>
+        <div style="font-size: 18px; line-height: 1.3em;">
+          <span class="k-icon k-font-icon k-i-exclamation-circle"></span> Delete
+          Data
+        </div>
+      </kendo-dialog-titlebar>
+      <div class="action-layout-config">
+        <h5 class="action-header">Actions Layout</h5>
+        <label
+          class="k-radio-label"
+          *ngFor="let layout of layoutOptions"
+          [for]="layout"
+        >
+          <input
+            kendoRadioButton
+            type="radio"
+            [id]="layout"
+            [value]="layout"
+            name="actionsLayout"
+            [(ngModel)]="actionsLayout"
+          />
+          {{ layout }}
+        </label>
+      </div>
+
+      <kendo-dialog-actions [layout]="actionsLayout">
+        <button kendoButton (click)="onDialogClose()">Cancel</button>
+        <button kendoButton (click)="onDeleteData()" themeColor="primary">
+          Delete
+        </button>
+      </kendo-dialog-actions>
+    </kendo-dialog> -->
+
+
+    <!-- 3 -->
+
+    <!-- <div class="example-config">
+      <h4>Status: {{ status }}</h4>
+    </div>
+
+    <kendo-dialog title="Action required" (close)="onClose()">
+      <p style="margin: 30px; text-align: center;">Do you accept?</p>
+
+      <kendo-dialog-actions>
+        <button kendoButton themeColor="primary" (click)="onAccept()">
+          Yes
+        </button>
+        <button kendoButton (click)="onDecline()">No</button>
+      </kendo-dialog-actions>
+    </kendo-dialog> -->
+
+
+    <!--4
+     <div class="example-wrapper">
+      <div class="example-config" *ngIf="result">
+        Dialog result: {{ result }}
+      </div>
+      <button kendoButton (click)="showConfirmation()">Please confirm</button>
+    </div>
+
+    <div kendoDialogContainer></div> -->
+
+
+    <button kendoButton *ngIf="!opened" (click)="open()">Open dialog</button>
+    <kendo-dialog
+      title="Dialog Theme Color"
+      *ngIf="opened"
+      (close)="close()"
+      [minWidth]="250"
+      [width]="450"
+      [themeColor]="dialogThemeColor"
+    >
+      <h5 style="margin: 30px; text-align: center;">Select theme color</h5>
+
+      <div class="example">
+        <kendo-buttongroup selection="single" width="100%">
+          <button
+            kendoButton
+            [selected]="true"
+            [toggleable]="true"
+            (click)="setThemeColor('primary')"
+          >
+            Primary
+          </button>
+          <button
+            kendoButton
+            [toggleable]="true"
+            (click)="setThemeColor('dark')"
+          >
+            Dark
+          </button>
+          <button
+            kendoButton
+            [toggleable]="true"
+            (click)="setThemeColor('light')"
+          >
+            Light
+          </button>
+        </kendo-buttongroup>
+      </div>
+    </kendo-dialog>

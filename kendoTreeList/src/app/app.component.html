@@ -1,0 +1,59 @@
+<!--1
+ <kendo-treelist
+  [kendoTreeListFlatBinding]="data"
+  kendoTreeListExpandable
+  idField="id"
+  parentIdField="managerId"
+>
+    <kendo-treelist-column [expandable]="true" field="name" title="Name"> </kendo-treelist-column>
+    <kendo-treelist-column [expandable]="true" field="title" title="Title"></kendo-treelist-column>
+    <kendo-treelist-column field="phone" title="Phone"></kendo-treelist-column>
+</kendo-treelist> -->
+
+
+<!-- 2
+<kendo-treelist
+kendoTreeListExpandable
+[data]="rootData | async"
+[fetchChildren]="fetchChildren"
+[hasChildren]="hasChildren"
+[height]="400"
+>
+<kendo-treelist-column [expandable]="true" title="Name" [width]="250">
+  <ng-template kendoTreeListCellTemplate let-dataItem>
+    {{ dataItem.FirstName }}
+    {{ dataItem.LastName }}
+  </ng-template>
+</kendo-treelist-column>
+<kendo-treelist-column field="Position" title="Position" [width]="180">
+</kendo-treelist-column>
+<kendo-treelist-column field="Extension" title="Extension" [width]="180">
+</kendo-treelist-column>
+</kendo-treelist> -->
+
+<kendo-treelist
+[kendoTreeListFlatBinding]="data"
+parentIdField="managerId"
+idField="id"
+kendoTreeListExpandable
+[sortable]="true"
+[height]="410"
+>
+<kendo-treelist-column
+  [expandable]="true"
+  field="name"
+  title="Name"
+  [width]="250"
+>
+</kendo-treelist-column>
+<kendo-treelist-column
+  field="title"
+  title="Title"
+  [width]="180"
+></kendo-treelist-column>
+<kendo-treelist-column
+  field="phone"
+  title="Phone"
+  [width]="180"
+></kendo-treelist-column>
+</kendo-treelist>
